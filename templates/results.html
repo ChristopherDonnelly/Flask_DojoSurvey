@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Dojos</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Submitted Info</h1>
+            <form action='/home' method='post'>
+                <p>Name: {{name}}</p>
+                <p>Dojo Location: {{location}}</p>
+                <p>Favorite Language: {{language}}</p>
+                <p>Comment: {{comment}}</p>
+                <input type='submit' value='Back'>
+            </form>
+        </div>
+    </body>
+</html>

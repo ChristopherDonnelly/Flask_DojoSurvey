@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Home</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Home</h1>
+            <form action='/results' name="request" method='post'>
+                <label for="name"><span>Your Name:</span>
+                <input type='text' name='name' id='name'></label>
+                    
+                <label for="location"><span>Dojo Location:</span>
+                <select name="location" id="location">
+                    <option>Seattle</option>
+                    <option>Silicon Valley</option>
+                    <option>Los Angeles</option>
+                    <option>Dallas</option>
+                    <option>Tulsa</option>
+                    <option>Chicago</option>
+                    <option>Washington DC</option>
+                </select></label>
+                
+
+                <label for="language"><span>Favorite Language:</span>
+                <select name="language" id="language">
+                    <option>JQuery</option>
+                    <option>Java</option>
+                    <option>Javascript</option>
+                    <option>C#</option>
+                    <option>Python</option>
+                    <option>iOS Swift</option>
+                </select></label>
+                
+                <label for="comment"><span>Comment (Optional):</span>
+                <textarea name="comment" rows="4" cols="50"></textarea></label>
+                
+                <span>
+                    <input type='submit' value='Submit'>
+                </span>
+            </form>
+        </div>
+    </body>
+</html>
