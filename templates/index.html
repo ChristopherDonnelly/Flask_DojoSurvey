@@ -9,37 +9,47 @@
             <h1>Home</h1>
             <form action='/results' name="request" method='post'>
                 <label for="name"><span>Your Name:</span>
-                <input type='text' name='name' id='name'></label>
-                    
+                <input type='text' name='name' id='name' value="{{session['name']}}"></label>
+                
                 <label for="location"><span>Dojo Location:</span>
                 <select name="location" id="location">
-                    <option>Seattle</option>
-                    <option>Silicon Valley</option>
-                    <option>Los Angeles</option>
-                    <option>Dallas</option>
-                    <option>Tulsa</option>
-                    <option>Chicago</option>
-                    <option>Washington DC</option>
+                    <option {{session['Seattle']}}>Seattle</option>
+                    <option {{session['Silicon Valley']}}>Silicon Valley</option>
+                    <option {{session['Los Angeles']}}>Los Angeles</option>
+                    <option {{session['Dallas']}}>Dallas</option>
+                    <option {{session['Tulsa']}}>Tulsa</option>
+                    <option {{session['Chicago']}}>Chicago</option>
+                    <option {{session['Washington DC']}}>Washington DC</option>
                 </select></label>
                 
 
                 <label for="language"><span>Favorite Language:</span>
                 <select name="language" id="language">
-                    <option>JQuery</option>
-                    <option>Java</option>
-                    <option>Javascript</option>
-                    <option>C#</option>
-                    <option>Python</option>
-                    <option>iOS Swift</option>
+                    <option {{session['JQuery']}}>JQuery</option>
+                    <option {{session['Java']}}>Java</option>
+                    <option {{session['Javascript']}}>Javascript</option>
+                    <option {{session['C Sharp']}}>C Sharp</option>
+                    <option {{session['Python']}}>Python</option>
+                    <option {{session['iOS Swift']}}>iOS Swift</option>
                 </select></label>
                 
                 <label for="comment"><span>Comment (Optional):</span>
-                <textarea name="comment" rows="4" cols="50"></textarea></label>
+                <textarea name="comment" rows="4" cols="50">{{session['comment']}}</textarea></label>
                 
                 <span>
                     <input type='submit' value='Submit'>
                 </span>
             </form>
+
+            <div id="errorLayer">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <p class="{{ category }}">{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
         </div>
     </body>
 </html>

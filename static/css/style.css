@@ -5,9 +5,9 @@
 }
 
 #wrapper {
-    width: 500px;
+    width: 650px;
     margin: 100px auto;
-    padding: 50px;
+    padding: 25px 0px 25px 25px;
     border: 1px solid #000000;
 }
 
@@ -20,8 +20,9 @@ h1 {
 }
 
 form {
-    display: table;
-    width: 100%;
+    display: inline-block;
+    width: 55%;
+    vertical-align: text-bottom;
 }
 
 label, input[type="submit"] {
@@ -36,10 +37,10 @@ form span, input, select, textarea, input[type="submit"] {
     margin: 5px;
 }
 form span {
-    width: 30%;
+    width: 45%;
 }
 select, textarea, input[type="text"] {
-    width: 85%;
+    width: 100%;
 }
 
 input[type="submit"] {
@@ -48,4 +49,23 @@ input[type="submit"] {
     height: 30px;
     margin: 20px 0px;
     cursor: pointer;
+}
+
+#errorLayer {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    padding-top: 5px;
+}
+
+.red {
+    color: red;
+}
+
+.first {
+    margin-top: 88px;
+}
+
+.second {
+    margin-top: 50px;
 }
